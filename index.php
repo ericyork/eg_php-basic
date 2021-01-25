@@ -20,6 +20,7 @@
         $row = $result->fetch_array(MYSQLI_ASSOC);
         printf ("%d %s %s\n", $row["year"], $row["make"], $row["model"]);
         echo "<p>My top pick is a " . $row["year"] . " " . $row["make"] . " " . $row["model"] . ". </p>";
+        $mysqli -> close();
       ?>
       <hr />
     </div>
@@ -33,6 +34,7 @@
           while ($line = $answer->fetch_array(MYSQLI_ASSOC)) {
             echo "<li><strong>" . $line["make"] . " " . $line["model"] . "</strong> (" . $line["year"] . ")" . ". </li>";
           }
+          $con -> close();
         ?>
       </ul>
       <hr />
